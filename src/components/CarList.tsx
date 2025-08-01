@@ -1,5 +1,6 @@
 import { useCars } from "../hooks/useCars";
 import { Car } from "../types/car.types";
+import CarCard from "./CarCard";
 
 function CarList() {
   const { cars, loading, error } = useCars();
@@ -9,13 +10,10 @@ function CarList() {
   return (
     <div>
       <div>CarList</div>
-      <ul>
-        {cars.map((car: Car) => (
-          <li key={car.id}>
-            {car.make} {car.model}
-          </li>
-        ))}
-      </ul>
+
+      {cars.map((car: Car) => (
+        <CarCard key={car.id} car={car} />
+      ))}
     </div>
   );
 }
