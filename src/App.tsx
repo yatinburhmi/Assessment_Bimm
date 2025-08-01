@@ -5,6 +5,7 @@ import {
   // useQuery,
 } from "@apollo/client";
 import { TaskList } from "./components/TaskList";
+import CarList from "./components/CarList";
 
 const client = new ApolloClient({
   uri: "/graphql", // MSW intercepts this
@@ -15,6 +16,7 @@ export default function App() {
   return (
     <ApolloProvider client={client}>
       <TaskList />
+      <CarList/>
     </ApolloProvider>
   );
 }
